@@ -1,30 +1,31 @@
-# TODO Написать 3 класса с документацией и аннотацией типов
+# -*- coding: utf-8 -*-
+# TODO РќР°РїРёСЃР°С‚СЊ 3 РєР»Р°СЃСЃР° СЃ РґРѕРєСѓРјРµРЅС‚Р°С†РёРµР№ Рё Р°РЅРЅРѕС‚Р°С†РёРµР№ С‚РёРїРѕРІ
 import doctest
 
 class Window:
     def __init__(self, width: float, height: float):
         """
-        Создание и подготовка к работе объекта "Окно"
+        РЎРѕР·РґР°РЅРёРµ Рё РїРѕРґРіРѕС‚РѕРІРєР° Рє СЂР°Р±РѕС‚Рµ РѕР±СЉРµРєС‚Р° "РћРєРЅРѕ"
 
-        :param width: Ширина окна
-        :param height: Высота окна
+        :param width: РЁРёСЂРёРЅР° РѕРєРЅР°
+        :param height: Р’С‹СЃРѕС‚Р° РѕРєРЅР°
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> window = Window(120.0, 150.0)
         """
         if not isinstance(width, (int, float)) or width <= 0:
-            raise ValueError("Ширина окна должна быть положительным числом")
+            raise ValueError("РЁРёСЂРёРЅР° РѕРєРЅР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј С‡РёСЃР»РѕРј")
         if not isinstance(height, (int, float)) or height <= 0:
-            raise ValueError("Высота окна должна быть положительным числом")
+            raise ValueError("Р’С‹СЃРѕС‚Р° РѕРєРЅР° РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј С‡РёСЃР»РѕРј")
 
         self.width = width
         self.height = height
 
     def open_window(self) -> None:
         """
-        Открытие окна.
+        РћС‚РєСЂС‹С‚РёРµ РѕРєРЅР°.
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> window = Window(120.0, 150.0)
         >>> window.open_window()
         """
@@ -32,9 +33,9 @@ class Window:
 
     def close_window(self) -> None:
         """
-        Закрытие окна.
+        Р—Р°РєСЂС‹С‚РёРµ РѕРєРЅР°.
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> window = Window(120.0, 150.0)
         >>> window.close_window()
         """
@@ -42,18 +43,18 @@ class Window:
 
     def resize_window(self, new_width: float, new_height: float) -> None:
         """
-        Изменение размеров окна.
+        РР·РјРµРЅРµРЅРёРµ СЂР°Р·РјРµСЂРѕРІ РѕРєРЅР°.
 
-        :param new_width: Новая ширина окна
-        :param new_height: Новая высота окна
-        :raise ValueError: Если переданы некорректные размеры
+        :param new_width: РќРѕРІР°СЏ С€РёСЂРёРЅР° РѕРєРЅР°
+        :param new_height: РќРѕРІР°СЏ РІС‹СЃРѕС‚Р° РѕРєРЅР°
+        :raise ValueError: Р•СЃР»Рё РїРµСЂРµРґР°РЅС‹ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ СЂР°Р·РјРµСЂС‹
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> window = Window(120.0, 150.0)
         >>> window.resize_window(140.0, 160.0)
         """
         if new_width <= 0 or new_height <= 0:
-            raise ValueError("Новые размеры должны быть положительными числами")
+            raise ValueError("РќРѕРІС‹Рµ СЂР°Р·РјРµСЂС‹ РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹РјРё С‡РёСЃР»Р°РјРё")
         self.width = new_width
         self.height = new_height
 
@@ -61,27 +62,27 @@ class Window:
 class Facebook:
     def __init__(self, username: str, friends_count: int):
         """
-        Создание и подготовка к работе объекта "Facebook"
+        РЎРѕР·РґР°РЅРёРµ Рё РїРѕРґРіРѕС‚РѕРІРєР° Рє СЂР°Р±РѕС‚Рµ РѕР±СЉРµРєС‚Р° "Facebook"
 
-        :param username: Имя пользователя
-        :param friends_count: Количество друзей пользователя
+        :param username: РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+        :param friends_count: РљРѕР»РёС‡РµСЃС‚РІРѕ РґСЂСѓР·РµР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> fb = Facebook("JohnDoe", 150)
         """
         if not isinstance(username, str) or not username:
-            raise ValueError("Имя пользователя должно быть строкой")
+            raise ValueError("РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ СЃС‚СЂРѕРєРѕР№")
         if not isinstance(friends_count, int) or friends_count < 0:
-            raise ValueError("Количество друзей должно быть неотрицательным числом")
+            raise ValueError("РљРѕР»РёС‡РµСЃС‚РІРѕ РґСЂСѓР·РµР№ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµРѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј С‡РёСЃР»РѕРј")
 
         self.username = username
         self.friends_count = friends_count
 
     def add_friend(self) -> None:
         """
-        Добавление друга.
+        Р”РѕР±Р°РІР»РµРЅРёРµ РґСЂСѓРіР°.
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> fb = Facebook("JohnDoe", 150)
         >>> fb.add_friend()
         """
@@ -89,9 +90,9 @@ class Facebook:
 
     def remove_friend(self) -> None:
         """
-        Удаление друга.
+        РЈРґР°Р»РµРЅРёРµ РґСЂСѓРіР°.
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> fb = Facebook("JohnDoe", 150)
         >>> fb.remove_friend()
         """
@@ -99,11 +100,11 @@ class Facebook:
 
     def post_status(self, status: str) -> None:
         """
-        Публикация статуса.
+        РџСѓР±Р»РёРєР°С†РёСЏ СЃС‚Р°С‚СѓСЃР°.
 
-        :param status: Текст статуса
+        :param status: РўРµРєСЃС‚ СЃС‚Р°С‚СѓСЃР°
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> fb = Facebook("JohnDoe", 150)
         >>> fb.post_status("Hello, world!")
         """
@@ -113,29 +114,29 @@ class Facebook:
 class Vkontakte:
     def __init__(self, username: str, groups_count: int):
         """
-        Создание и подготовка к работе объекта "ВКонтакте"
+        РЎРѕР·РґР°РЅРёРµ Рё РїРѕРґРіРѕС‚РѕРІРєР° Рє СЂР°Р±РѕС‚Рµ РѕР±СЉРµРєС‚Р° "Р’РљРѕРЅС‚Р°РєС‚Рµ"
 
-        :param username: Имя пользователя
-        :param groups_count: Количество групп, в которых состоит пользователь
+        :param username: РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+        :param groups_count: РљРѕР»РёС‡РµСЃС‚РІРѕ РіСЂСѓРїРї, РІ РєРѕС‚РѕСЂС‹С… СЃРѕСЃС‚РѕРёС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> vk = Vkontakte("IvanIvanov", 10)
         """
         if not isinstance(username, str) or not username:
-            raise ValueError("Имя пользователя должно быть строкой")
+            raise ValueError("РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ СЃС‚СЂРѕРєРѕР№")
         if not isinstance(groups_count, int) or groups_count < 0:
-            raise ValueError("Количество групп должно быть неотрицательным числом")
+            raise ValueError("РљРѕР»РёС‡РµСЃС‚РІРѕ РіСЂСѓРїРї РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµРѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј С‡РёСЃР»РѕРј")
 
         self.username = username
         self.groups_count = groups_count
 
     def join_group(self, group_name: str) -> None:
         """
-        Присоединение к группе.
+        РџСЂРёСЃРѕРµРґРёРЅРµРЅРёРµ Рє РіСЂСѓРїРїРµ.
 
-        :param group_name: Название группы
+        :param group_name: РќР°Р·РІР°РЅРёРµ РіСЂСѓРїРїС‹
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> vk = Vkontakte("IvanIvanov", 10)
         >>> vk.join_group("Python Developers")
         """
@@ -143,12 +144,12 @@ class Vkontakte:
 
     def leave_group(self, group_name: str) -> None:
         """
-        Выход из группы.
+        Р’С‹С…РѕРґ РёР· РіСЂСѓРїРїС‹.
 
-        :param group_name: Название группы
+        :param group_name: РќР°Р·РІР°РЅРёРµ РіСЂСѓРїРїС‹
 
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> vk = Vkontakte("IvanIvanov", 10)
         >>> vk.leave_group("Python Developers")
         """
@@ -156,14 +157,14 @@ class Vkontakte:
 
     def send_message(self, recipient: str, message: str) -> None:
         """
-        Отправка сообщения пользователю.
+        РћС‚РїСЂР°РІРєР° СЃРѕРѕР±С‰РµРЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ.
 
-        :param recipient: Имя получателя
-        :param message: Текст сообщения
+        :param recipient: РРјСЏ РїРѕР»СѓС‡Р°С‚РµР»СЏ
+        :param message: РўРµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ
 
-        Примеры:
+        РџСЂРёРјРµСЂС‹:
         >>> vk = Vkontakte("IvanIvanov", 10)
-        >>> vk.send_message("Pavel", "Привет!")
+        >>> vk.send_message("Pavel", "РџСЂРёРІРµС‚!")
         """
         ...
 
